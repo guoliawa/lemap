@@ -1,0 +1,136 @@
+Use postman in googleAPP
+1. http://localhost:8080/lemap/locations/insertOne
+
+{
+    "userid": "123456",
+    "timestamp": "2012",
+    "latitude": 8888,
+    "longitude": 9999,
+    "connectedwifi": {
+	    "level": "1",
+		"ssid": "0000",
+		"bssid": "1111"
+	},
+    "wifienv": [
+	    {	    
+	       "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}, 
+		{
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		},
+		{	    
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}
+	],
+    "activity": "333"
+}
+
+2. http://localhost:8080/lemap/locations/insertMany
+[{
+    "userid": "123456",
+    "timestamp": "2012",
+    "latitude": 8888,
+    "longitude": 9999,
+    "connectedwifi": {
+	    "level": "1",
+		"ssid": "0000",
+		"bssid": "1111"
+	},
+    "wifienv": [
+	    {	    
+	       "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}, 
+		{
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		},
+		{	    
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}
+	],
+    "activity": "333"
+},
+{
+    "userid": "123456",
+    "timestamp": "2012",
+    "latitude": 8888,
+    "longitude": 9999,
+    "connectedwifi": {
+	    "level": "1",
+		"ssid": "0000",
+		"bssid": "1111"
+	},
+    "wifienv": [
+	    {	    
+	       "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}, 
+		{
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		},
+		{	    
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}
+	],
+    "activity": "333"
+},
+{
+    "userid": "123456",
+    "timestamp": "2012",
+    "latitude": 8888,
+    "longitude": 9999,
+    "connectedwifi": {
+	    "level": "1",
+		"ssid": "0000",
+		"bssid": "1111"
+	},
+    "wifienv": [
+	    {	    
+	       "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}, 
+		{
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		},
+		{	    
+		   "level": "1",
+		   "ssid": "0000",
+		   "bssid": "1111"
+		}
+	],
+    "activity": "333"
+}]
+
+
+3. http://localhost:8080/sensor/data/PostFormData
+
+
+{
+    "userid": "123456",
+    "timestamp": "2012",
+    "latitude": 8888,
+    "longitude": 9999
+}
+
+4. http://localhost:8080/lemap/locations/upload?name=locations.json
+select "body", select "form-data", select "file" then select the file.
+
