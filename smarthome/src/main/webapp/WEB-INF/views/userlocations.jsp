@@ -2,6 +2,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -17,6 +19,11 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>User ID ${userid}</h1>
+				<p>
+					<a href="<spring:url value="/usermap?id=${userid}" />" class="btn btn-primary">
+						<span class="glyphicon-map-marker glyphicon" /></span> View Map
+					</a>
+				</p>
 			</div>
 		</div>
 	</section>

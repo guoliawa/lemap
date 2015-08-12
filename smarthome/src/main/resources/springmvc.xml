@@ -9,7 +9,7 @@
 	<mvc:annotation-driven>
 	</mvc:annotation-driven>
 	<mvc:resources location="/bootstrap-3.3.5-dist/" mapping="/bootstrap/**" />
-
+    <mvc:resources mapping="/images/**" location="/static_resources/images/"/> 
 	<context:component-scan base-package="com.restful" />
 
 	<bean

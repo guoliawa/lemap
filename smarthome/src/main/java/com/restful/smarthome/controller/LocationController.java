@@ -29,8 +29,7 @@ import com.restful.smarthome.service.UserService;
 @Controller
 public class LocationController {
 
-    private static Logger logger = LoggerFactory
-            .getLogger(LocationController.class);
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private LocationInfoService infoservice;
@@ -52,6 +51,15 @@ public class LocationController {
 
         logger.info("Getting locations from \"" + userid + "\"" + "\n");
         return "userlocations";
+    }
+    
+    @RequestMapping(value = "/usermap", method = RequestMethod.GET)
+    public String viewUsermap(@RequestParam("id") String userid,  Model model) {
+        model.addAttribute("userid", userid);
+        model.addAttribute("locations", infoservice.findByUserid(userid));
+
+        logger.info("Getting locations from \"" + userid + "\"" + "\n");
+        return "usermap";
     }
 
     @RequestMapping(value = "/locations/insertone", method = RequestMethod.POST, consumes = "application/json")
@@ -113,20 +121,20 @@ public class LocationController {
                         + "\"" + "\n");
 
                 return new ResponseEntity<String>(
-                        "You successfully uploaded locations!",
+                        userid + " successfully uploaded locations!",
                         new HttpHeaders(), HttpStatus.OK);
             } catch (Exception e) {
                 logger.debug("The exception is " + e + "\n");
 
-                return new ResponseEntity<String>("You failed to upload "
-                        + userid + " => " + e.getMessage(), new HttpHeaders(),
+                return new ResponseEntity<String>(userid + " failed to upload locations!"
+                        + " => " + e.getMessage(), new HttpHeaders(),
                         HttpStatus.OK);
             }
         } else {
             logger.info("The userid \"" + userid + "\""
                     + "uploaded an empty file!" + "\n");
 
-            return new ResponseEntity<String>("You uploaed an empty file.",
+            return new ResponseEntity<String>(userid + " uploaed an empty file.",
                     new HttpHeaders(), HttpStatus.OK);
         }
     }
