@@ -3,24 +3,16 @@ package smarthome.repository;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.mongodb.Mongo;
 import com.restful.smarthome.domain.Location;
 import com.restful.smarthome.repository.LocationRepository;
 
@@ -73,47 +65,7 @@ public class LocationRepositoryTest {
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-          
-          
-          
-//        Page<Location> locations = repository.findAll(new PageRequest(0, 10));
-//        locations.getContent();
-//        List<Location> ls = repository.findAll();
-//        
-//        String date = "2015-07-23 07:26:19 0790";
-//        DateTimeFormatter myFmt = DateTimeFormatter
-//                .ofPattern("yyyy-MM-dd HH:mm:ss SSSS");
-//        DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSSS");
-//        try {
-//            repository.findByTimestampAfter(format1.parse(date));
-//        } catch (ParseException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        
-//        repository.insert(locations);
-//        
-//        System.out.println("Now the num is " + ls.size());
-//        
-//        MongoOperations mongoOps = mt;
-//        ls.clear();
-//        
-//        ls = mongoOps.findAll(Location.class);
-//        ls.clear();
-//        
-//        Set<String> names = mt.getCollectionNames();
-//        
-//        mongoOps.insertAll(locations.getContent());
-//        
-//        Location newl = new Location();
-//        newl.setAddress("XXXX");
-//        newl.setUserid("myid");
-//        mongoOps.insert(newl);
-//        
-//        ls = mongoOps.findAll(Location.class);
-//        repository.insert();
-        
+        }       
     }
     
     

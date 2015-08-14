@@ -99,4 +99,8 @@ public class LocationInfo implements Serializable {
     public void setConnectedwifi(ConnectedWifi connectedwifi) {
         this.connectedwifi = connectedwifi;
     }
+    
+    public PositionInfo getPositionInfo() {
+        return new PositionInfo(timestamp, latitude, longitude);
+    }
 }

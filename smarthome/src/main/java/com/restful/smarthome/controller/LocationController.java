@@ -49,16 +49,16 @@ public class LocationController {
         model.addAttribute("userid", userid);
         model.addAttribute("locations", infoservice.findByUserid(userid));
 
-        logger.info("Getting locations from \"" + userid + "\"" + "\n");
+        logger.info("Getting locations from \"" + userid + "\"");
         return "userlocations";
     }
     
     @RequestMapping(value = "/usermap", method = RequestMethod.GET)
     public String viewUsermap(@RequestParam("id") String userid,  Model model) {
         model.addAttribute("userid", userid);
-        model.addAttribute("locations", infoservice.findByUserid(userid));
+        model.addAttribute("positions", infoservice.findPositionByUserid(userid));
 
-        logger.info("Getting locations from \"" + userid + "\"" + "\n");
+        logger.info("Getting locations from \"" + userid + "\"");
         return "usermap";
     }
 
@@ -85,8 +85,8 @@ public class LocationController {
         String methodName = "upload";
 
         logger.info(LocationController.class + "." + methodName
-                + " accepts file" + file.getName() + ".\n" + "The userid is \""
-                + userid + "\"" + "\n");
+                + " accepts " + file.getName() + ".\n" + "The userid is \""
+                + userid + "\"");
         if (!file.isEmpty()) {
             try {
                 logger.info("File is not empty, starting to process this file!");
@@ -110,7 +110,7 @@ public class LocationController {
 
                 if (!userservice.isDuplicatedUser(newUser)) {
                     logger.info("This is a new user." + "Adding \"" + userid
-                            + "\"" + " to USERS smartHome.users." + "\n");
+                            + "\"" + " to USERS smartHome.users.");
                     userservice.insert(newUser);
                 }
 
@@ -118,13 +118,13 @@ public class LocationController {
                         + "\n");
                 infoservice.insert(locations);
                 logger.info("Complete inserted locations from \"" + userid
-                        + "\"" + "\n");
+                        + "\"");
 
                 return new ResponseEntity<String>(
                         userid + " successfully uploaded locations!",
                         new HttpHeaders(), HttpStatus.OK);
             } catch (Exception e) {
-                logger.debug("The exception is " + e + "\n");
+                logger.debug("The exception is " + e);
 
                 return new ResponseEntity<String>(userid + " failed to upload locations!"
                         + " => " + e.getMessage(), new HttpHeaders(),

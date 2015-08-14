@@ -2,7 +2,7 @@ package com.restful.smarthome.domain;
 
 import java.io.Serializable;
 
-public class WifiInfo implements Serializable{
+public class WifiInfo implements Serializable {
     /**
      * 
      */
@@ -10,6 +10,15 @@ public class WifiInfo implements Serializable{
     private double level;
     private String ssid;
     private String bssid;
+    private boolean locked;
+
+    public boolean isLocked() {
+        return locked;
+    }
+
+    public void setLocked(boolean locked) {
+        this.locked = locked;
+    }
 
     public double getLevel() {
         return level;

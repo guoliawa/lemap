@@ -10,6 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 
 <link href="/smarthome/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="/smarthome/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript"
 	src="http://webapi.amap.com/maps?v=1.3&key=13d52242f585e518fa67626c3bf539e2">
@@ -20,7 +22,7 @@
 #mapContainer {
     height: 100%;
     width: 100%;
-    min-height: 700px;
+    min-height: 650px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -41,22 +43,22 @@
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</div>
-			
-			<div class="span2" style="padding-bottom:5px">
+
+			<div class="span2" style="padding-bottom: 5px">
 				<img src="/smarthome/images/logo.png" class="img-polaroid">
 			</div>
-			
+
 			<div class="span12">
-					<div class="jumbotron">
-						<h1>Welcome to Lenovo SmartHome</h1>
-						<p class="lead">Intelligent platform</p>
-						<p>
-							<a href="<spring:url value="/users" />" class="btn btn-primary">
-								<span class="glyphicon-info-sign glyphicon" /></span> View Users
-							</a>
-						</p>
-					</div>
+				<div class="jumbotron">
+					<h1>Welcome to Lenovo SmartHome</h1>
+					<p class="lead">Intelligent platform</p>
+					<p>
+						<a href="<spring:url value="/users" />" class="btn btn-primary">
+							<span class="glyphicon-info-sign glyphicon" /></span> View Users
+						</a>
+					</p>
 				</div>
+			</div>
 		</div>
 	</div>
 

@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.gridfs.GridFsOperations;
 
 public class FileRepository {
     
-    @Autowired
-    GridFsOperations operations;
-    
-     public String storeFile(InputStream in) {
-         return "successfully";
-     }
+//    @Autowired
+//    GridFsOperations operations;
+//    
+//     public String storeFile(InputStream in) {
+//         return "successfully";
+//     }
 }

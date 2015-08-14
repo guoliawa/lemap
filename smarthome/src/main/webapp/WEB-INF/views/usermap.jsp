@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -20,7 +21,7 @@
 #mapContainer {
 	height: 100%;
 	width: 100%;
-	min-height: 1080px;
+	min-height: 650px;
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
@@ -31,6 +32,18 @@
 <title>Map</title>
 </head>
 <body>
+    <section>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>User ID ${userid}</h1>
+                <p>
+                    <a href="<spring:url value="/usermap?id=${userid}" />" class="btn btn-primary">
+                        <span class="glyphicon-map-marker glyphicon" /></span> View Map
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
 	<section>
 		<div class="container-fluid">
 			<div class="row-fluid">
@@ -56,19 +69,48 @@
 							map.addControl(type);
 						});
 						
-						var marker =  new AMap.Marker({   
-				            //复杂图标
-				            icon: new AMap.Icon({    
-				                    //图标大小
-				                    size:new AMap.Size(28,37),
-				                    //大图地址
-				                    image:"http://webapi.amap.com/images/1.png", 
-				                    imageOffset:new AMap.Pixel(0,0)
-				                }),
-				            //在地图上添加点
-				            position:new AMap.LngLat(116.298876, 40.054416 )
-				        });
-				        marker.setMap(map);							
+						function avg(arr) {
+							var result;
+							if (arr.length == 0) {
+							    return 0;
+							}
+						    var i = 0;
+						    var sum = 0;
+						    while(arr[i]) {
+						    	sum += arr[i];
+						    	i ++;
+						    }
+						    
+						    result = sum/arr.length;
+						    return result;
+						}
+						
+						$(document).ready(function() {
+						    var longArr = new Array();
+						    var laArr = new Array();
+							var positions = '${positions}';
+							$.each(JSON.parse(positions), function(index, position) {
+								var longitude = position.longitude;
+								var latitude = position.latitude;
+								longArr.push(longitude);
+								laArr.push(latitude);
+							    var marker = new AMap.Marker({
+		                            //复杂图标
+		                            icon : new AMap.Icon({
+		                                //图标大小
+		                                size : new AMap.Size(28, 37),
+		                                //大图地址
+		                                image : "http://webapi.amap.com/images/marker_sprite.png",
+		                                imageOffset : new AMap.Pixel(0, 0)
+		                            }),
+		                            //在地图上添加点
+		                            position : new AMap.LngLat(longitude, latitude)
+		                        }); 
+							    marker.setMap(map);							    
+							});
+							
+							map.panTo(new AMap.LngLat(avg(longArr),avg(laArr)));
+						});
 					</script>
 				</div>
 			</div>
