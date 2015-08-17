@@ -92,6 +92,7 @@
 							$.each(JSON.parse(positions), function(index, position) {
 								var longitude = position.longitude;
 								var latitude = position.latitude;
+								var date = new Date(position.timestamp);
 								longArr.push(longitude);
 								laArr.push(latitude);
 							    var marker = new AMap.Marker({

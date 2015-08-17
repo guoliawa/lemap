@@ -12,6 +12,10 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"
 	rel="stylesheet">
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/smarthome/bootstrap/js/bootstrap.min.js"></script>
+	
 <title>All Locations</title>
 </head>
 <body>
