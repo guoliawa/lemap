@@ -1,7 +1,12 @@
 package com.restful.smarthome.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,5 +62,29 @@ public class LocationInfoService {
         }
 
         return PositionsJsonString;
+    }
+    
+    public List<LocationInfo> findByUseridAndTime(String userid, String start,
+            String end) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        Date startDate = new Date(); 
+        Date endDate = new Date();
+
+        try {
+            formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+            startDate = formatter.parse(start);
+            endDate = formatter.parse(end);
+
+            // endDate should add 1 day to left the Between work.
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(endDate);
+            cal.add(Calendar.DATE, 1);
+            endDate = cal.getTime();
+        } catch (ParseException e) {
+            logger.debug("Parsing date failed!", e.toString());
+        }
+
+        return repository.findByUseridAndTimestampBetweenOrderByTimestampDesc(
+                userid, startDate, endDate);
     }
 }

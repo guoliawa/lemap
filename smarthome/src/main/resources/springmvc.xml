@@ -9,7 +9,10 @@
 	<mvc:annotation-driven>
 	</mvc:annotation-driven>
 	<mvc:resources location="/bootstrap-3.3.5-dist/" mapping="/bootstrap/**" />
-    <mvc:resources mapping="/images/**" location="/static_resources/images/"/> 
+	<mvc:resources location="/bootstrap-daterangepicker-master/" mapping="/datepicker/**" />
+    <mvc:resources location="/static_resources/images/" mapping="/images/**" />
+    <mvc:resources location="/static_resources/js/" mapping="/js/**" />
+
 	<context:component-scan base-package="com.restful" />
 
 	<bean

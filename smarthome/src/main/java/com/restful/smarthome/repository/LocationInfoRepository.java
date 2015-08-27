@@ -1,5 +1,6 @@
 package com.restful.smarthome.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -10,4 +11,5 @@ public interface LocationInfoRepository extends MongoRepository<LocationInfo, St
     public List<LocationInfo> findAll();
     public List<LocationInfo> findByUserid(String userid);
     public List<LocationInfo> findByUseridOrderByTimestampDesc(String userid);
+    public List<LocationInfo> findByUseridAndTimestampBetweenOrderByTimestampDesc(String userid, Date start, Date end);   
 }

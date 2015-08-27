@@ -7,7 +7,7 @@ public class WifiInfo implements Serializable {
      * 
      */
     private static final long serialVersionUID = -5989119063135915429L;
-    private double level;
+    private int level;
     private String ssid;
     private String bssid;
     private boolean locked;
@@ -20,11 +20,11 @@ public class WifiInfo implements Serializable {
         this.locked = locked;
     }
 
-    public double getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(double level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 

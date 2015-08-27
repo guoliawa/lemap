@@ -24,7 +24,7 @@ public class LocationInfo implements Serializable {
     private String username;
     private String userid;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss SSSS", timezone="GMT+8")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss SSSS")
     private Date timestamp;
     private double latitude;
     private double longitude;

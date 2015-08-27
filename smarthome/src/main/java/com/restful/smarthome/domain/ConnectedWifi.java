@@ -1,7 +1,7 @@
 package com.restful.smarthome.domain;
 
 public class ConnectedWifi {
-    private double rssi;
+    private int rssi;
     private String ssid;
     private String bssid;
     private boolean locked;
@@ -14,11 +14,11 @@ public class ConnectedWifi {
         this.locked = locked;
     }
 
-    public double getRssi() {
+    public int getRssi() {
         return rssi;
     }
 
-    public void setRssi(double rssi) {
+    public void setRssi(int rssi) {
         this.rssi = rssi;
     }
 

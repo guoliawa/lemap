@@ -45,8 +45,9 @@
 
 						<tr>
 							<td>${location.userid}</td>
-							<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss SSSS"
-									value="${location.timestamp}"/></td>
+							<td><fmt:setTimeZone value="GMT-0" /> <fmt:formatDate
+									pattern="yyyy-MM-dd HH:mm:ss SSSS"
+									value="${location.timestamp}" /></td>
 							<td>${location.connectedwifi.ssid}</td>
 							<td>${location.latitude}</td>
 							<td>${location.longitude}</td>
