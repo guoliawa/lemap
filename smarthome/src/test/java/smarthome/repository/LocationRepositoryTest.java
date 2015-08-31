@@ -45,7 +45,7 @@ public class LocationRepositoryTest {
           Location returnl = repository.insert(l);
           Location newl = new Location();
           Date now = new Date();
-          
+          System.out.println("The time is " + returnl.getTimestamp());
 
           newl.setTimestamp(now);
           newl.setAddress("山东省青岛市");

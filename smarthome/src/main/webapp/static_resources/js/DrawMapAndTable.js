@@ -86,6 +86,8 @@ function showMap(locations) {
 		marker&&marker.setMap(null);
 	})
 	
+	markers = [];
+	
 	$.each(locations, function(index, location) {
 		var longitude = location.longitude;
 		var latitude = location.latitude;

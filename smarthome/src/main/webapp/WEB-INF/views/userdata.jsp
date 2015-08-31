@@ -100,7 +100,7 @@
 				</tbody>
 			</table>
 		</div>
-
+		
 		<div class="container container-fluid paddingTop" id="mapdiv">
 			<div class="row-fluid">
 				<div class="span12">

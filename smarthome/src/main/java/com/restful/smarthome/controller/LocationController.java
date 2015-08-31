@@ -47,7 +47,7 @@ public class LocationController {
         return "locations";
     }
 
-//    @RequestMapping(value = "/locations/user", method = RequestMethod.GET)
+    // @RequestMapping(value = "/locations/user", method = RequestMethod.GET)
     public String findUserLocations(@RequestParam("id") String userid,
             Model model) {
         model.addAttribute("userid", userid);
@@ -90,14 +90,14 @@ public class LocationController {
         model.addAttribute("userid", userid);
         return "userdata";
     }
-    
+
     @RequestMapping(value = "/locations/get/data", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
     public @ResponseBody List<LocationInfo> pagelocationUserid(
             @RequestParam("id") String userid,
             @RequestParam("start") String start, @RequestParam("end") String end) {
         return infoservice.findByUseridAndTime(userid, start, end);
     }
-    
+
     @RequestMapping(value = "/locations/uploadtxt", method = RequestMethod.POST)
     public ResponseEntity<String> uploadtxt(@RequestParam("id") String userid,
             @RequestParam("file") MultipartFile file) {
