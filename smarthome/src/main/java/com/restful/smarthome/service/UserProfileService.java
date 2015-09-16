@@ -13,4 +13,8 @@ public class UserProfileService {
     public String getDataByID(String userid) {
         return repository.getDataByID(userid);
     }
+
+    public String getDataCopyByID(String userid) {
+        return repository.getDataCopyByID(userid);
+    }
 }

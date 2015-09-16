@@ -12,13 +12,18 @@ import com.restful.smarthome.service.UserProfileService;
 import com.restful.smarthome.service.UserService;
 
 @Controller
-@RequestMapping(value = "/userprofiles")
+@RequestMapping
 public class UserProfileController {
     @Autowired
     private UserProfileService service;
     
-    @RequestMapping(value = "/get/profile", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+    @RequestMapping(value = "/userprofiles/get/profile", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
     public @ResponseBody String getProfileByID(@RequestParam("id") String userid) {
         return service.getDataByID(userid);
+    }
+    
+    @RequestMapping(value = "/userprofiles_copy/get/profile", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+    public @ResponseBody String getProfileCopyByID(@RequestParam("id") String userid) {
+        return service.getDataCopyByID(userid);
     }
 }

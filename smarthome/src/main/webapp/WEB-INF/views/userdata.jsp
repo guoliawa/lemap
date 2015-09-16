@@ -68,9 +68,9 @@
 			</div>
 
 			<div class="row paddingTop">
-				<div class="col-xs-0 col-md-7">&nbsp;</div>
+				<div class="col-xs-0 col-md-6">&nbsp;</div>
 
-				<div id="reportrange" class="pull-right col-xs-12 col-md-3"
+				<div id="reportrange" class="pull-right col-xs-12 col-md-4"
 					style="background: #fff; cursor: pointer; padding: 5px 10px; border: 2px solid #ccc">
 					<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp; <span></span>
 					<b class="caret"></b>
