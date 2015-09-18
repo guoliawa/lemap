@@ -17,4 +17,8 @@ public class UserProfileService {
     public String getDataCopyByID(String userid) {
         return repository.getDataCopyByID(userid);
     }
+
+    public boolean updateTimepointsByID(int id, String userid, String min) {
+        return repository.updateTimepointsByID(id, userid, min);        
+    }
 }
